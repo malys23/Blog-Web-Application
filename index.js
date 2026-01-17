@@ -20,9 +20,12 @@ app.get("/post", (req, res)=>{
     res.render("post.ejs");
 });
 
-app.post("submit", (req, res) => {
-    const time = new Date().getFullYear();
-    res.render("index.ejs", {image: image_upload, title: title, text: text});
+app.post("/submit", (req, res) => {
+    const time = new Date();
+    console.log(time);
+    console.log(title);
+    console.log(text);
+    res.render("index.ejs", {time: time, image: image_upload, title: title, text: text});
 })
 
 app.listen(port, () => {

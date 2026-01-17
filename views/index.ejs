@@ -1,9 +1,12 @@
 <%- include("partials/header.ejs") %>
 
-<% if (locals.image && locals.title && locals.text){ %>
-
+<% if (locals.title && locals.text){ %>
+<h1> <%= title %></h1>
+<h2> <%= time %> </h2>
+<p> <%=text %></p>
+<p> - First Last </p>
 <% } else { %>
-
+<h1> No new posts! </h1>
 <% } %> 
 
 
