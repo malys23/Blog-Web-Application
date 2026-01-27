@@ -21,11 +21,11 @@ app.get("/post", (req, res)=>{
 });
 
 app.post("/submit", (req, res) => {
-    const time = new Date();
-    console.log(time);
-    console.log(title);
-    console.log(text);
-    res.render("index.ejs", {time: time, image: image_upload, title: title, text: text});
+    var rawTime = new Date();
+    const time = rawTime.toLocaleString();
+    const title = req.body.title
+    const text = req.body.text
+    res.render("index.ejs", {time: time, title: title, text: text});
 })
 
 app.listen(port, () => {
