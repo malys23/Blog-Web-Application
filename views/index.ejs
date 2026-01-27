@@ -1,4 +1,43 @@
+<link href="../public/styles/content.css" rel="stylesheet">
 <%- include("partials/header.ejs") %>
+
+<div class="head-box">
+    <h1>Welcome to my Blog!</h1>
+    <h3>Some information about the blog goes here.</h3>
+</div>
+<div class="button-box">
+    <button id = "myButton">New Post</button>
+</div>
+<div class="overlay" id="overlay"> </div>
+<div class="form-popup", id="popUpForm">
+    <h1>New Blog</h1>
+    <form class="mb-3 form-container" action="/submit" method="POST">
+        <div class="mb-3">
+            <label for="formFile" class="form-label">Upload Image</label>
+            <input name="image_upload" class="form-control" type="file" id="formFile" accept="image/png, image/jpeg">
+        </div>
+        <div class="mb-3">
+            <label for="blogTitle" class="form-label">Blog Title</label>
+            <input name="title" type="text" class="form-control" id="blogTitle"  placeholder="Title">
+        </div>
+        <div class="mb-3">
+            <label for="blogText" class="form-label">Blog Text</label>
+            <textarea name="text" class="form-control" id="blogText" rows="5" placeholder="Start typing here..."></textarea>
+        </div>
+        <input type="submit" value="SUBMIT" />
+    </form>
+</div>
+
+<script>
+    const overlay = document.getElementById("overlay");
+    const popUpForm = document.getElementById("popUpForm");
+    var button = document.getElementById("myButton");
+    button.addEventListener("click", function(){
+        document.getElementById("overlay").style.display = "block";
+        document.getElementById("popUpForm").style.display = "block";
+    });
+</script>
+
 
 <% if (locals.title && locals.text){ %>
 <h1> <%= title %></h1>
@@ -12,3 +51,4 @@
 
 
 <%- include("partials/footer.ejs") %>
+<script src = "/index.js"></script>
