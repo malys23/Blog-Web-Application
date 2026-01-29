@@ -1,20 +1,38 @@
 <%- include("partials/header.ejs") %>
 
-<div container>
-    <div class="post">
+<div class="displayArea">
+  <div class="main">
     <h1><%= title %></h1>
     <p><%= text %></p>
   </div>
-  <div class="editing">
-    <a href="/edit/<%=postID%>"><input type="button" value="Edit"></a>
-    <form action="/delete" method="POST">
-      <input type="text" name="postID" hidden value="<%=postID%>">
-      <input type="submit" value="Delete">
-    </form>
-  </div>
-  <div class="previous-posts">
-    <h1>Other Posts</h1>
-  </div>
+  <div class="secondary">
+    <div class="editing">
+      <a href="/edit/<%=postID%>"><input type="button" value="Edit"></a>
+      <form action="/delete" method="POST">
+        <input type="text" name="postID" hidden value="<%=postID%>">
+        <input type="submit" value="Delete">
+      </form>
+    </div>
+    <div class="previous-posts">
+    <%  if (posts.length===0) {%>
+        <div>
+          <p>No posts yet...</p>
+        </div>
+      <%} else {%>
+        <div>
+          <p>Other Posts</p>
+          <ul class="p-0">
+      <%    posts.toReversed().forEach((post) => {%>
+              <li>
+                <h3><a href="/view/<%= posts.indexOf(post) %>"><%=post.title%></a></h3>
+                <hr>
+              </li>
+      <%    }); %>
+          </ul>
+        </div>
+    <%  }%>
+    </div>
+  </div>  
 </div>
 
 <%- include("partials/footer.ejs") %>

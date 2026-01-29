@@ -1,21 +1,22 @@
 <%- include("partials/header.ejs") %>
 
-<div class="create-edit">
-  <div class="container">
+<div class="displayArea">
+  <div class="main">
+    <div class="edit-post">
       <% if (locals.postID) { %>
         <div class="post">
           <h1> Edit Post </h1>
-          <form class="mb-3" action="/update" method="POST">
-            <div class="mb-3">
+          <form class="input-form" action="/update" method="POST">
+            <div class="input-text">
               <label for="blogTitle" class="form-label">Blog Title</label>
               <input name="title" type="text" class="form-control" id="blogTitle" value="<%=title%>">
             </div>
-            <div class="mb-3">
+            <div class="input-text">
               <label for="blogText" class="form-label">Blog Text</label>
               <textarea name="text" type="text" class="form-control" id="blogText" rows="5"><%=text%></textarea>
               <input hidden type="text" name="index" value="<%=postID%>">
             </div>
-            <div class="m-1">
+            <div class="submit-button">
               <input type="submit" value="Update Post"/>
             </div>            
           </form>
@@ -23,25 +24,44 @@
       <%} else { %>
         <div class="post">
           <h1>New Blog</h1>
-          <form class="mb-3" action="/submit" method="POST">
-            <div class="mb-3">
+          <form class="input-form" action="/submit" method="POST">
+            <div class="input-text">
               <label for="blogTitle" class="form-label">Blog Title</label>
               <input name="title" type="text" class="form-control" id="blogTitle"  placeholder="Title">
             </div>
-            <div class="mb-3">
+            <div class="input-text">
               <label for="blogText" class="form-label">Blog Text</label>
               <textarea name="text" class="form-control" id="blogText" rows="5" placeholder="Start typing here..."></textarea>
             </div>
-            <div class="m-1">
+            <div class="submit-button">
               <input type="submit" value="Post"/>
             </div>            
           </form>
         </div>
-        <div class="previous-posts">
-          <h1>Get Inspired</h1>
-        </div>
       <% } %>
+    </div>
   </div>
+  <div class="secondary">
+    <div class="previous-posts">
+  <%  if (posts.length===0) {%>
+        <div>
+          <p>No posts yet...</p>
+        </div>
+  <%} else {%>
+        <div>
+          <p>Get Inspired</p>
+          <ul class="p-0">
+  <%        posts.toReversed().forEach((post) => {%>
+              <li>
+                <h3><a href="/view/<%= posts.indexOf(post) %>"><%=post.title%></a></h3>
+                <hr>
+              </li>
+  <%         }); %>
+          </ul>
+        </div>
+  <%  } %>
+    </div>
+  </div>  
 </div>
 
 <%- include("partials/footer.ejs") %>
