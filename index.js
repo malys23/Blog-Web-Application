@@ -49,7 +49,7 @@ app.get("/about", (req, res)=>{
 
 //Post Creation
 app.get("/thePost", (req, res)=>{
-    res.render("thePost.ejs");
+    res.render("thePost.ejs", {posts: posts});
 });
 
 //Post Save
@@ -65,14 +65,14 @@ app.post("/submit", (req, res) => {
 app.get("/view/:id", (req, res) => {
     let index = req.params.id;
     let post = posts[index];
-    res.render("view.ejs", {postID: index, title: post.title, text: post.text})
+    res.render("view.ejs", {posts: posts, postID: index, title: post.title, text: post.text});
 });
 
 //Post Edit
 app.get("/edit/:id", (req, res) =>{
     let index = req.params.id;
     let post = posts[index];
-    res.render("thePost.ejs", {postID: index, title: post.title, text: post.text});
+    res.render("thePost.ejs", {posts: posts, postID: index, title: post.title, text: post.text});
 });
 
 //Submit Edit
