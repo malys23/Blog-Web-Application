@@ -1,56 +1,66 @@
 <%- include("partials/header.ejs") %>
 
-<div class="welcomeArea">
-    <div class="head-box">
-        <h1>Welcome to my Blog!</h1>
-        <h3>Some information about the blog goes here.</h3>
-    </div>
-    <div class="button-box">
-        <a href="/thePost"><button id = "myButton">New Post</button></a>
-    </div>
-</div>
-<div class="displayArea">
-    <div class="main">
-        <div class="all-posts">
-        <% if (posts.length===0) {%>
-            <div>
-                <h3> No new posts...</h3>
+    <div class="page-container">
+        <div class="welcomeArea">
+            <h2 class="handwriting">welcome to the</h2>
+            <h1 class="handwriting">Blog Simulator</h1>
+            <div class="transp-bg">
+                <p>Go ahead, create a new post and watch it appear below. It is almost as if this is your own personal blog! Just be aware if you refresh, you'll have to start all over.</p>
             </div>
-        <% } else { %>
-            <ul>
-        <%      posts.toReversed().forEach((post) => {%>
-                    <li>
-                        <h3><a href="/view/<%=posts.indexOf(post)%>"><%=post.title%></a></h3>
-                        <p><%=post.time%></p>
-                        <p><%=post.text%></p>
+            <div class="button-box">
+                <a href="/thePost"><button class="btn-primary typed">New Post</button></a>
+            </div>          
+        </div>
+        <div class="divider-body"></div>
+        <div class="displayArea ">
+            <div class="primary">
+                <div class="all-posts ">
+                <% if (posts.length===0) {%>
+                    <div>
+                        <h4 class="typed"> No new posts...</h4>
+                    </div>
+                <% } else { %>
+                    <ul class="post">
+                <%      posts.toReversed().forEach((post) => {%>
+                            <div class="posts-display">
+                                <div class="clip-container">
+                                    <div class="clip"></div>
+                                </div>
+                                <div class="post-content">
+                                    <h3 class="handwriting"><a href="/view/<%=posts.indexOf(post)%>"><%=post.title%></a></h3>
+                                    <h6 class="typed"><%=post.time%></h6>
+                                    <p><%=post.text%></p>
+                                    <p class="post-count">/ Post Number <%=posts.indexOf(post) + 1%> /</p>
+                                </div>
+                            </div>
+                <%      }); %>
+                    </ul>
+                <% } %>
+                </div>
+            </div>
+            <div class="secondary">
+                <div class="previous-posts">
+                <% if (posts.length===0) {%>
+                    <div>
+                        <h5>No posts yet...</h5>
+                    </div>
+                <%} else {%>
+                    <div>
+                        <h3 class="handwriting">Recent Posts</h3>
                         <hr>
-                    </li>
-        <%      }); %>
-            </ul>
-        <% } %>
+                        <ul class="recent-post">
+                    <%      posts.toReversed().forEach((post) => {%>
+                                <div class="post-specs">
+                                    <h5 class="typed"><a href="/view/<%= posts.indexOf(post) %>"><%=post.title%></a></h5>
+                                    <hr>
+                                </div>
+                    <%      }); %>
+                        </ul>
+                    </div>
+                <% } %>
+                </div>
+            </div>    
         </div>
     </div>
-    <div class="secondary">
-        <div class="previous-posts">
-        <% if (posts.length===0) {%>
-            <div>
-                <p>No posts yet...</p>
-            </div>
-        <%} else {%>
-            <div>
-                <p>Recent Posts</p>
-                <ul>
-            <%      posts.toReversed().forEach((post) => {%>
-                        <li>
-                            <h3><a href="/view/<%= posts.indexOf(post) %>"><%=post.title%></a></h3>
-                            <hr>
-                        </li>
-            <%      }); %>
-                </ul>
-            </div>
-        <% } %>
-        </div>
-    </div>    
-</div>
 
 <%- include("partials/footer.ejs") %>

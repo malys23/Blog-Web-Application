@@ -1,16 +1,141 @@
-.container{
-    display: flex;
-    flex-direction: column;
+/*Header */
+header .navbar{
+  background-color: whitesmoke;
+  color: rgba(209,51,39, 1);
 }
 
-.card-img{
-    height: 200px;
+.navbar-my-brand-logo{
+  font-size: 25px;
+  margin-top: 5px;
+  padding-right: 10px;
 }
 
-#blogText{
-  height: 50%;
+.navbar-my-brand-title{
+  font-size: 20px;
+  padding-right: 10px;
 }
 
-.card .mb-3{
-  display: none;
+/* Universal classes */
+.handwriting{
+  font-family: "Gochi Hand", cursive;
+  font-style: normal;
+  font-weight: 400;
+}
+
+p, .typed{
+  font-family: "Lato", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+
+hr {
+  margin:5px;
+}
+
+h3{
+  color: whitesmoke;
+  font-size: 35px;
+  margin-top:10px;
+}
+
+a{
+  text-decoration: none;
+}
+
+a:link {
+  color:#cb463a
+}
+
+a:visited{
+  color:#cb463a
+}
+
+a:hover{
+  color:#701911;
+}
+
+.btn-primary{
+  background-color: #cb463a; /* #ffcc66*/
+  color: whitesmoke;
+  font-size:19px;
+  border: black;
+  padding:5px 10px 5px 10px;
+  border-radius: 5px;
+}
+
+.btn-primary:hover{
+  color: #cb463a;
+  background-color:rgba(255, 204,102, 1);
+}
+
+/* Home page banner Specific*/
+.welcomeArea{
+  background-image: linear-gradient(rgba(183, 117, 96, 0.3)), url("../images/pages-blur-by-patrick-tomasso.jpg");
+  background-blend-mode: multiply;
+  background-size: cover;
+  color: white;
+}
+
+.welcomeArea h1{
+  font-size: 100px;
+}
+
+.welcomeArea h2{
+  font-size: 50px;
+}
+
+.transp-bg{
+  display: flex;
+  justify-content: center;
+  width: 45%;
+  min-width: 45%;
+  background-color: rgba(183, 117, 96, 0.3);
+  border-radius: 3px;
+}
+
+.transp-bg p{
+  text-align: center;
+  vertical-align: middle;
+  color: whitesmoke;
+  padding: 10px;
+  font-size: 20px;
+}
+
+/*Divider Body*/
+.divider-body{
+  background-color: whitesmoke;
+  height:50px;
+}
+
+/*General Display area specific*/
+.displayArea{
+  background-image: linear-gradient(rgba(183, 117, 96, 0.45)), url("../images/wood-by-bernard-hermant.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.clip{
+  background-image: url("../images/binder-clip-by-prosymbolspremium.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.post-content{
+  background-image: linear-gradient(rgba(183, 117, 96, 0.25)), url("../images/crumple-by-bart-wesolek.jpg");
+  background-blend-mode: multiply;
+  background-size: cover;
+  border-radius: 5px 5px 10px 10px;
+}
+
+.previous-posts{
+  background-color: rgba(245, 245, 245, 0.3);
+  border-radius: 2px 2px 5px 5px;
+  margin-bottom: 1%;
+  padding: 10px;
+}
+
+/*Footer*/
+footer{
+  background-color: whitesmoke;
+  color: rgba(209,51,39, 1);
 }
