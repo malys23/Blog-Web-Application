@@ -3,14 +3,14 @@ This project is a simple blog web application built with Node.js, Express.js, an
 <br>
 The application emphasizes server-side rendering with EJS, structured routing with Express, and thoughtful styling to provide a smooth user experience across both desktop and mobile devices.<br>
 
-##Features
+## Features
 - Create new blog posts <br>
 - View all posts on the home page <br>
 - Edit and delete existing posts <br>
 - Responsive and user-friendly design <br>
 - Server-side rendered pages using EJS templates <br>
 
-##Tech Stack
+## Tech Stack
 - Node.js – Backend runtime <br>
 - Express.js – Web server and routing <br>
 - EJS – Templating engine for dynamic HTML <br>
