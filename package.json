@@ -3,7 +3,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node server"
+    "start": "node index"
   },
   "author": "Alyona Maliassova",
   "license": "ISC",
