@@ -1,6 +1,6 @@
 # Blog-Web-Application
 This project is a simple blog web application built with Node.js, Express.js, and EJS. It allows users to create, view, edit, and delete blog posts in a clean, responsive interface. Posts are stored in memory, so they do not persist between sessions, keeping the project lightweight and focused on core web development concepts.
-<br>
+<br> <br>
 The application emphasizes server-side rendering with EJS, structured routing with Express, and thoughtful styling to provide a smooth user experience across both desktop and mobile devices.<br>
 
 ## Features
