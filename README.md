@@ -17,3 +17,8 @@ The application emphasizes server-side rendering with EJS, structured routing wi
 - CSS – Styling and responsive layout <br>
 
 ## Learning Outcomes
+- Developed CRUD functionality by implementing post creation, viewing, editing, and deletion. <br>
+- Improved understanding of application state management without a database by storing data in memory.<br>
+- Imortance of planning stage for things to run smoothly - planning the design before implementing anything.<br>
+<br>
+Active Link: [https://blog-simulator.onrender.com/](https://blog-simulator.onrender.com/)
