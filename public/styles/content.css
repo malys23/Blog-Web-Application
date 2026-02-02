@@ -68,12 +68,44 @@ a:hover{
   background-color:rgba(255, 204,102, 1);
 }
 
+.btn-secondary{
+  background-color: rgba(183, 117, 96);
+  color: whitesmoke;
+  width: 100%;
+  font-size:17px;
+  padding: 5px 20px 7px 20px;
+  border-radius: 5px;
+  margin: 0px 0px 5px 0px;
+  border-style: none;
+}
+
+.btn-secondary:hover{
+  color: #cb463a;
+  background-color:rgba(255, 204,102, 1);
+}
+
+.btn-delete{
+  background-color: rgba(209,51,39, 1);
+  color: whitesmoke;
+  width: 100%;
+  font-size:17px;
+  padding: 5px 10px 7px 10px;
+  border-radius: 5px;
+  margin: 0px 0px 5px 0px;
+  border-style: none;
+}
+
+.btn-delete:hover{
+  color: whitesmoke;
+  background-color:darkred;
+}
+
 /* Home page banner Specific*/
 .welcomeArea{
   background-image: linear-gradient(rgba(183, 117, 96, 0.3)), url("../images/pages-blur-by-patrick-tomasso.jpg");
   background-blend-mode: multiply;
   background-size: cover;
-  color: white;
+  color: whitesmoke;
 }
 
 .welcomeArea h1{
@@ -108,7 +140,7 @@ a:hover{
 }
 
 /*General Display area specific*/
-.displayArea{
+.displayArea, .displayArea-not-home{
   background-image: linear-gradient(rgba(183, 117, 96, 0.45)), url("../images/wood-by-bernard-hermant.jpg");
   background-size: cover;
   background-position: center;
@@ -130,8 +162,22 @@ a:hover{
 .previous-posts{
   background-color: rgba(245, 245, 245, 0.3);
   border-radius: 2px 2px 5px 5px;
-  margin-bottom: 1%;
+  margin-bottom: 0px;
   padding: 10px;
+}
+
+.title-container{
+  color: rgba(209,51,39, 1);
+}
+
+.head-container{
+  margin-bottom: -7px;
+}
+
+/* About Page Elements*/
+.headshot{
+  width: 100%;
+  border-radius: 150px;;
 }
 
 /*Footer*/

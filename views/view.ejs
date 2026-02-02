@@ -1,21 +1,27 @@
 <%- include("partials/header.ejs") %>
 
 <div class="page-container">
-  <div class="displayArea not-home">
+  <div class="displayArea-not-home">
     <div class="primary">
-      <div class="posts-display">
-        <h1 class="handwriting"><%= title %></h1>
+      <div class="post-content en-post">
+        <div class="top-runner">
+          <div class="title-container">
+            <h1 class="handwriting"><%= title %></h1>
+          </div>
+        </div>
+        <h6 class="typed"><%=time%></h6>
         <p><%= text %></p>
+        <p class="post-count">/ Post Number <%=postIDNew%> /</p>
+        <div class="editing">
+            <form action="/delete" method="POST">
+              <input type="text" name="postID" hidden value="<%=postID%>">
+              <input type="submit" class="btn-delete btn-width" value="Delete">
+            </form>
+            <a href="/edit/<%=postID%>"><input type="button" class="btn-secondary btn-width" value="Edit"></a>
+        </div>
       </div>
-    </div>
-    <div class="secondary">
-      <div class="editing">
-        <a href="/edit/<%=postID%>"><input type="button" class="btn btn-primary" value="Edit"></a>
-        <form action="/delete" method="POST">
-          <input type="text" name="postID" hidden value="<%=postID%>">
-          <input type="submit" class="btn btn-danger" value="Delete">
-        </form>
-      </div>
+    </div>    
+    <div class="secondary">      
       <div class="previous-posts">
       <%  if (posts.length===0) {%>
           <div>
@@ -24,10 +30,12 @@
         <%} else {%>
           <div>
             <h3 class="handwriting">Other Posts</h3>
+            <hr>
             <ul class="recent-post">
         <%    posts.toReversed().forEach((post) => {%>
                 <div class="post-specs">
                   <h6><a href="/view/<%= posts.indexOf(post) %>"><%=post.title%></a></h6>
+                  <hr>
                 </div>
         <%    }); %>
             </ul>
