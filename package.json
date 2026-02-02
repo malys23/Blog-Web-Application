@@ -1,7 +1,12 @@
-{ "name": "Blog",
+{ "name": "blog-web-application",
   "version": "1.0.0",
   "main": "index.js",
   "type": "module",
+  "scripts": {
+    "start": "node server"
+  },
+  "author": "Alyona Maliassova",
+  "license": "ISC",
   "dependencies": {
     "body-parser": "^2.2.2",
     "ejs": "^4.0.1",
