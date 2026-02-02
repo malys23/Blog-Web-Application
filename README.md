@@ -21,4 +21,4 @@ The application emphasizes server-side rendering with EJS, structured routing wi
 - Improved understanding of application state management without a database by storing data in memory.<br>
 - Imortance of planning stage for things to run smoothly - planning the design before implementing anything.<br>
 <br>
-Active Link: [https://blog-simulator.onrender.com/]( https://blog-simulator.onrender.com/)
+Active Link: []( https://blog-simulator.onrender.com/)
